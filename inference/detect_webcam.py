@@ -2,15 +2,21 @@ import cv2
 from ultralytics import YOLO
 from pathlib import Path
 
-from animal_detection.utils.constants import CARNIVORES, RED, GREEN
-from animal_detection.inference.carnivore_counter import count_carnivores
+from utils.constants import CARNIVORES, RED, GREEN
+from inference.carnivore_counter import count_carnivores
 
 
 # ==========================
 # Paths
 # ==========================
 
-BASE_DIR = Path(__file__).resolve().parent.parent
+import sys
+from pathlib import Path
+
+if getattr(sys, "frozen", False):
+    BASE_DIR = Path(sys._MEIPASS)
+else:
+    BASE_DIR = Path(__file__).resolve().parent.parent
 MODEL_PATH = BASE_DIR / "models" / "weights" / "best.pt"
 
 model = YOLO(str(MODEL_PATH))

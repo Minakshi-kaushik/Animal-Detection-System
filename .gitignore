@@ -44,3 +44,27 @@ models/weights/
 *.pt
 *.mp4
 tempCodeRunnerFile.py
+
+# Dataset
+dataset/
+
+# Outputs
+outputs/
+
+# Model weights
+models/weights/
+*.pt
+
+# PyInstaller
+dist/
+build/
+*.spec
+
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Virtual environments
+venv/
+.venv/

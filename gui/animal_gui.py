@@ -4,17 +4,23 @@ from pathlib import Path
 import platform
 from PIL import Image, ImageTk
 
-from animal_detection.utils.constants import CARNIVORES
+from utils.constants import CARNIVORES
 
-from animal_detection.inference.detect_images import detect_image
-from animal_detection.inference.detect_video import detect_video
-from animal_detection.inference.detect_webcam import detect_webcam
+from inference.detect_images import detect_image
+from inference.detect_video import detect_video
+from inference.detect_webcam import detect_webcam
+
 
 # ==========================
 # Paths & Colors
 # ==========================
+import sys
+from pathlib import Path
 
-BASE_DIR = Path(__file__).resolve().parent.parent
+if getattr(sys, "frozen", False):
+    BASE_DIR = Path(sys._MEIPASS)
+else:
+    BASE_DIR = Path(__file__).resolve().parent.parent
 
 BANNER_PATH = BASE_DIR / "assets" / "banner.webp"
 

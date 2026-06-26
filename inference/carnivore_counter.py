@@ -1,4 +1,4 @@
-from animal_detection.utils.constants import CARNIVORES
+from utils.constants import CARNIVORES
 
 
 def count_carnivores(animal_names):
